@@ -5,3 +5,4 @@ def soma():
    return var3
 
 print(soma())
+print('teste')
