@@ -1,4 +1,6 @@
-import aula7ex1
+def aumento_salarial(salario, percentual):
+    novo_salario = salario*(percentual/100 + 1)
+    return novo_salario
 
-aula7ex1.salario_fulano
-
+salario_fulano = aumento_salarial(2000, 10)
+print(salario_fulano)
