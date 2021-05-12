@@ -2,4 +2,4 @@
 def imc(alt, peso):
     return peso / alt ** 2
 
-print('IMC =', format(imc(1.68, 75),'.2f'))
+print('IMC =', format(imc(1.68, 75),'.2f').replace('.',','))

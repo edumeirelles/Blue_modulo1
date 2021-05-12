@@ -7,4 +7,4 @@ def salario(qtde_horas, valor_hora):
     else:
         return (40 * valor_hora) + (qtde_horas - 40) * valor_hora * 1.5 
 
-print('Salário =', format(salario(float(input('Qual a quantidade de horas trabalhadas?: ')), float(input('Qual o valor da hora trabalhada?: '))),'.2f'))
+print('Salário =', format(salario(float(input('Qual a quantidade de horas trabalhadas?: ').replace(',','.')), float(input('Qual o valor da hora trabalhada?: ').replace(',','.'))),'.2f').replace('.',','))

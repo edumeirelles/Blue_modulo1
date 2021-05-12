@@ -6,4 +6,4 @@ def somaImposto(taxaImposto, custo):
     custo = custo + custo * taxaImposto / 100
     return custo
 
-print('Custo com imposto:', format(somaImposto(float(input('Digite a alíquota do imposto: ')), float(input('Digite o custo: '))),'.2f'))
+print('Custo com imposto: R$', format(somaImposto(float(input('Digite a alíquota do imposto: ').replace(',','.')), float(input('Digite o custo: ').replace(',','.'))),'.2f').replace('.',','))
