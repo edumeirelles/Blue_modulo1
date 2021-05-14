@@ -65,7 +65,7 @@ def custo_viagem(x, y, z, w):
 
     return x + y + z + w
 
-print(format(float(custo_viagem(custo_hotel(int(input('Noites hotel: '))),custo_aviao(input('Destino: ').lower()),custo_carro(int(input('Dias carro: '))),float(input('Gastos extras: ').replace(',','.')))),'.2f').replace('.',','))
+print('Custo total da viagem: R$',format(float(custo_viagem(custo_hotel(int(input('Noites hotel: '))),custo_aviao(input('Destino: ').lower()),custo_carro(int(input('Dias carro: '))),float(input('Gastos extras: ').replace(',','.')))),'.2f').replace('.',','))
 
 
 
