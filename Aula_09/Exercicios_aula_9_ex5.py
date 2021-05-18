@@ -18,7 +18,7 @@
 produtos = []
 print('Lojas Tabajara')
 for i in range(1,1000):
-      
+    
     a = float(input(f'Produto {i}: R$ ').replace(',','.'))
     if a == 0:
         print('Total: R$', format(sum(produtos),'.2f').replace('.',','))
@@ -27,6 +27,7 @@ for i in range(1,1000):
         print('Troco: R$', format(troco,'.2f').replace('.',','))
         produtos = []
         print('Lojas Tabajara')
+        
         continue
                     
     else:
