@@ -2,6 +2,7 @@
 # aleatórios. Guarde esses resultados em um dicionário. No final coloque esse dicionário
 # em ordem, sabendo que o vencedor tirou o maior número no dado. Dicas: procure
 # sobre a função randint(), sleep() e itemgetter da bliblioteca operator
+
 from time import sleep
 from random import randint
 from operator import itemgetter
