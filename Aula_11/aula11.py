@@ -13,5 +13,16 @@
 # print(dic_contatos.get(nome,'Contato não encontrado'))
 
 vingadores = {'Chris Evans':'Capitão América', 'Mark Ruffalo':'Hulk', 'Tom Hiddleston':'Loki', 'Chris Hemsworth':'Thor', 'Robert Downey Jr':'Homem de Ferro', 'Scarlet Johansson':'Viúva Negra'}
-while True:
-    print(vingadores.get(input('Digite o nome do(a) ator/atriz: '), 'Ator/atriz não encontrado.'))
+
+# ator = input('Digite o nome do(a) ator/atriz: ').title()
+
+# while ator not in vingadores:
+#     print('Ator/atriz não encontrado.')
+#     ator = input('Digite o nome do(a) ator/atriz: ').title()
+#     if ator == '0':
+#         break
+# print(vingadores.get(ator,'Ator/atriz não encontrado.'))
+
+for i in vingadores.values():
+    print(i)
+    
