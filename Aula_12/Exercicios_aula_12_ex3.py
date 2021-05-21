@@ -6,8 +6,8 @@
 lista = []
 
 for i in range(1,6):
-    aluno = input('Digite o nome do Aluno: ')
-    media = float(input('Digite a média do Aluno: ').replace(',','.'))
+    aluno = input(f'Digite o nome do Aluno {i}: ')
+    media = float(input(f'Digite a média do Aluno {i}: ').replace(',','.'))
     if media >= 7:
         lista.append([aluno, 'Aprovado'])
     elif 7 > media >= 5:
