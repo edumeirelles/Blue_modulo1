@@ -24,7 +24,7 @@ gabarito = []
 
 for i in range(1,11):
     
-    if i < 10:
+    if i < 10:                                                              #Condição if < 10 para a string ser adicionada no formato '00' para as questões 1 a 9.
         r = input(f'Digite o gabarito da questão 0{i}: ').upper()
         while r not in 'ABCDE' or r == '':
             print('Gabarito incorreto. Digite A, B, C, D ou E')
@@ -41,7 +41,7 @@ aluno_resp_nota = []
 
 
 p = ''
-while p != 'N':
+while p != 'N':                                                               
 
     a = input('Digite o nome do aluno: ').capitalize()
     if a == '':
@@ -63,7 +63,7 @@ while p != 'N':
         if x == j:
             nota += 1
 
-    aluno_resp_nota.append([a, resp_aluno, nota])
+    aluno_resp_nota.append([a, resp_aluno, nota])                           #
     resp_aluno = []
     p = input('Deseja digitar notas de outro aluno?: ').upper()
     while p != 'S' and p != 'N':
