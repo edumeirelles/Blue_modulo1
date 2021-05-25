@@ -59,3 +59,4 @@ class aluno():
 
 aluno_eduardo = aluno("Eduardo", 36, '3am', 10, 8, '0123456', 15)
 aluno_zé = aluno('Zé', 20, '3e',8 ,6 ,'554125', 18)
+

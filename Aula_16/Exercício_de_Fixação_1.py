@@ -10,4 +10,3 @@ class pessoa():
 a = pessoa(input('Digite o nome: '),input('Digite o sobrenome: '),int(input('Digite a idade: ')))
 
 a.mostrar_dados()
-
