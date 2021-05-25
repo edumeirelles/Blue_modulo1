@@ -38,8 +38,57 @@ def menu():
         elif op == '6':
             exibir()
         else:
-            
+            print('Opção Inválida. Tente novamente.')
 
+def exibir():
+    if len(alunos) > 0:
+        for aluno in alunos:
+            print(f'\t Nome: {aluno}\t-\tNota: {alunos[aluno]}')
+    else:
+        print('\tNão existem alunos cadastrados.')
 
-anlunos = dict()
-menu()
+def inserir():
+    aluno = input('\tDigite o nome do aluno: ')
+    nota = float(input('\tDigite a nota do aluno: '))
+    if alunos.get(aluno):
+        print("\tAluno já consta na lista. Caso deseje alterar a nota, selecione a opção correta.")
+    else:
+        alunos.update({aluno:nota})
+        print(f"\tAluno {aluno} inserido com sucesso!")
+
+def alterar():
+    aluno = input("\tDigite o nome do aluno: ")        
+    nota = float(input("\tDigite a nota do aluno: "))
+    if (aluno not in alunos):
+        print("\tAluno não consta na lista. Caso deseje inserir a nota, selecione a opção correta.")
+    else:
+        alunos.update({aluno:nota})
+        print(f"\tAluno {aluno} alterado com sucesso!")
+
+def consultar():
+    aluno = input("\tDigite o nome do aluno: ")
+    if (aluno not in alunos):
+        print("\tAluno não consta na lista. Caso deseje inserir a nota, selecione a opção correta.")
+    else:
+        print(f"\tNome: {aluno}\t-\tNota: {alunos[aluno]}")
+
+def apagar():
+    aluno = input("\tDigite o nome do aluno: ")
+    if (aluno not in alunos):
+        print("\tAluno não consta na lista. Caso deseje inserir a nota, selecione a opção correta.")
+    else:
+        alunos.pop(aluno)
+        print(f"\tAluno {aluno} apagado com sucesso!")
+
+def exibir_media():
+    soma = 0
+    for nota in alunos.values():
+        soma += nota
+    if len(alunos) > 0:
+        media = soma/len(alunos)
+    else:
+        media = 0.0
+    print(f"\tA média da turma é {media:.2f}.")
+
+alunos = dict()
+menu()  
