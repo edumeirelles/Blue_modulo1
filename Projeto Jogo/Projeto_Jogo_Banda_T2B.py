@@ -21,16 +21,6 @@ class Relogio:
         return (self.horas > 7 or (self.horas == 7 and self.minutos > 0))
 
 
-# def countdown(t):
-    
-#     while t:
-#         mins, secs = divmod(t, 60)
-#         timer = '{:02d}:{:02d}'.format(mins, secs)
-#         #print(timer, end="\r")
-#         time.sleep(1)
-#         t -= 1
-# t = 10
-
 class Personagem:
     def __init__(self):
         self.habilidade = 50
