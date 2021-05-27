@@ -23,21 +23,21 @@ def Musica1():
 
     pygame.mixer.init()
     pygame.init()
-    pygame.mixer.music.load('Projeto Jogo\corte_metallica.mp3')
+    pygame.mixer.music.load('Projeto Jogo\Banda_T2B\corte_metallica.mp3')
     pygame.mixer_music.play()
     pygame.event.wait()
 def Musica2():
 
     pygame.mixer.init()
     pygame.init()
-    pygame.mixer.music.load('Projeto Jogo\corte_iron.mp3')
+    pygame.mixer.music.load('Projeto Jogo\Banda_T2B\corte_iron.mp3')
     pygame.mixer_music.play()
     pygame.event.wait()
 def Musica3():
 
     pygame.mixer.init()
     pygame.init()
-    pygame.mixer.music.load('Projeto Jogo\corte_telo.mp3')
+    pygame.mixer.music.load('Projeto Jogo\Banda_T2B\corte_telo.mp3')
     pygame.mixer_music.play()
     pygame.event.wait()
 
@@ -118,14 +118,16 @@ if(__name__ == "__main__"):
       
         print(personagem)
         sleep(1)
-        print("")
+        print()
         print("Ações:")
+        print()
         print('1 - Subir no palco')
         print('2 - Cumprimentar o público')
         print('3 - Tocar uma música')
         print('4 - Fazer uma pausa')
         print('5 - Abandonar Palco')
         print('0 - Sair')
+        print()
         opcao = input("Escolha sua ação: ")
         print()
        
