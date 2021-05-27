@@ -2,6 +2,34 @@
 # Sugestão: completar com classes filhas colocando pessoas saudáveis, trabalhos menos remunerados, casas melhor equipadas et cetera
 from time import sleep
 from random import randint
+import pygame
+
+def Musica1(): 
+
+    pygame.mixer.init()
+    pygame.init()
+    pygame.mixer.music.load('corte_iron.mp3')
+    pygame.mixer_music.play()
+    pygame.event.wait()
+
+def Musica2():
+
+    pygame.mixer.init()
+    pygame.init()
+    pygame.mixer.music.load('corte_metallica.mp3')
+    pygame.mixer_music.play()
+    pygame.event.wait()
+
+
+def Musica3():
+
+    pygame.mixer.init()
+    pygame.init()
+    pygame.mixer.music.load('corte_telo.mp3')
+    pygame.mixer_music.play()
+    pygame.event.wait()
+
+
 
 class Personagem:
     def __init__(self):
@@ -21,7 +49,7 @@ class Publico:
 def lista_musica():
 
     print ('Qual música você deseja tocar?: \n')
-    print ('Pressione (1) para:  Metallica - Master of Puppets')
+    print ('Pressione (1) para: Metallica - Master of Puppets')
     print ('Pressione (2) para: Iron Maiden - Fear of the Dark')
     print ('Pressione (3) para: A se eu te pego!\n')
     musica = input ('Opção: ')
@@ -32,6 +60,7 @@ def lista_musica():
             print('Você ainda não tem habilidade para tocar essa música! Escolha outra!!!\n')           
             lista_musica()
         else:
+            Musica2()
             personagem.fama += 30
             publico.publico += 200
             personagem.cansaco += 15
@@ -42,6 +71,7 @@ def lista_musica():
             print (f'A sua fama agora é: {personagem.fama}. Público atual: {publico.publico} e cansaço: {personagem.cansaco} ')
             
     if musica == '2':
+        Musica1()
         personagem.fama += 25
         publico.publico += 150
         personagem.cansaco += 10
@@ -52,6 +82,7 @@ def lista_musica():
         print (f'A sua fama agora é: {personagem.fama}. Público atual: {publico.publico} e cansaço: {personagem.cansaco} ')
             
     if musica == '3':
+        Musica3()
         personagem.fama -= 20
         publico.publico -= 300
         personagem.cansaco += 5
@@ -81,9 +112,7 @@ if(__name__ == "__main__"):
     #             break
 
     while True:
-
-        print(x)
-        print(cont)
+      
 
         print(personagem)
         sleep(1)
@@ -97,14 +126,10 @@ if(__name__ == "__main__"):
         print('0 - Sair')
         opcao = input("Escolha sua ação: ")
         print()
-        
-        
-            
-
-
+       
         if opcao == '1':
             if cont >= 2: 
-                x = randint(1,3)
+                x = randint(1,5)
                 if x == 1:
                     print('CHUVA!!!')
                     print()
@@ -130,7 +155,7 @@ if(__name__ == "__main__"):
         
         if opcao == '2':
             if cont >= 2:
-                x = randint(1,3) 
+                x = randint(1,5) 
                 if x == 1:
                     print('CHUVA!!!')
                     print()
@@ -161,7 +186,7 @@ if(__name__ == "__main__"):
                        
         if opcao == '3':
             if cont >= 2: 
-                x = randint(1,3)
+                x = randint(1,5)
                 if x == 1:
                     print('CHUVA!!!')
                     print()
