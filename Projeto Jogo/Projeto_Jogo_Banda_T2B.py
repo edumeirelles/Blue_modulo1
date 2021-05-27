@@ -74,13 +74,21 @@ if(__name__ == "__main__"):
             personagem.dinheiro += musicas_tocadas*100
         
         elif opcao == '4':
-            personagem.cansaco -= 40
-            publico.publico *= 0.85
+            if personagem.cansaco <= 40:
+                print('Tá cansado do quê??? Comece a tocar!!!')
+            else:
+                personagem.cansaco -= 40
+                publico.publico *= 0.85
 
 
         elif opcao == '5':
             print('Você Abandonou o palco!')
-            personagem.dinheiro -= 1000
+            if personagem.dinheiro >= 1000:
+                personagem.dinheiro -= 1000
+                print('Você será multado em R$ 1000,00!!!')
+            else:
+                personagem.dinheiro = 0
+                print('Você será multado em R$', format(personagem.dinheiro,'.2f').replace('.',','), '!!!')
             personagem.fama *= 0.5
             publico.publico *= 0.25
                
