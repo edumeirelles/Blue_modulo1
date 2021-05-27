@@ -16,19 +16,67 @@ class Personagem:
 class Publico:
     def __init__(self):
         self.publico = 500
- 
+  
+def lista_musica():
+
+    print ('Qual música você deseja tocar?: \n')
+    print ('Pressione (1) para:  Metallica - Master of Puppets')
+    print ('Pressione (2) para: Iron Maiden - Fear of the Dark')
+    print ('Pressione (3) para: A se eu te pego!\n')
+    musica = input ('Opção: ')
+    print() 
+        
+    if musica == '1':
+        if personagem.habilidade < 50:
+            print('Você ainda não tem habilidade para tocar essa música! Escolha outra!!!\n')           
+            lista_musica()
+        else:
+            personagem.fama += 30
+            publico.publico += 200
+            personagem.cansaco += 15
+            personagem.habilidade += 40
+            personagem.dinheiro += 200
+
+            print ("Parace que a sua fama aumentou após esse som!!!")
+            print (f'A sua fama agora é: {personagem.fama}. Público atual: {publico.publico} e cansaço: {personagem.cansaco} ')
+            
+    if musica == '2':
+        personagem.fama += 25
+        publico.publico += 150
+        personagem.cansaco += 10
+        personagem.habilidade += 30
+        personagem.dinheiro += 100
+        
+        print ('Ao som do Maiden, o público foi a loucura!')
+        print (f'A sua fama agora é: {personagem.fama}. Público atual: {publico.publico} e cansaço: {personagem.cansaco} ')
+            
+    if musica == '3':
+        personagem.fama -= 20
+        publico.publico -= 300
+        personagem.cansaco += 5
+        personagem.habilidade -= 10
+        personagem.dinheiro += 50
+
+        print ('O seu público não esperava tanta ousadia...contenha-se!')
+        print (f'A sua fama agora é: {personagem.fama}. Público atual: {publico.publico} e cansaço: {personagem.cansaco} ')
+
 if(__name__ == "__main__"):
     
-    print("---")
-    print('Bem vindo à banda Turma 2B!!!')
-    print("---")
-    sleep(1)
-
     personagem = Personagem()
     publico = Publico()   
-    musicas_tocadas = 0
+    
     subiu_no_palco = False
     
+    # while True:
+    #         print("---")
+    #         print('Bem vindo à banda Turma 2B!!!')
+    #         print('O seu show começa em')
+    #         for cont in range (5, -1, -1):
+    #             print (cont)
+    #             sleep(1)
+    #         if cont ==0:
+    #             break
+
     while True:
                 
         print(personagem)
@@ -55,24 +103,8 @@ if(__name__ == "__main__"):
             if personagem.cansaco >= 60:
                 print('Você está muito cansado!!! Melhor fazer uma pausa!!!')
             else:
-                if personagem.habilidade >= 75:
-                    personagem.habilidade += 5
-                    personagem.cansaco += 5
-
-                elif 75 > personagem.habilidade >= 50:
-                    personagem.habilidade += 5
-                    personagem.cansaco += 10
-
-                elif 50 > personagem.habilidade >= 25:
-                    personagem.habilidade += 10
-                    personagem.cansaco += 15
-
-                else:
-                    personagem.habilidade += 10
-                    personagem.cansaco += 20
-            musicas_tocadas += 1
-            personagem.dinheiro += musicas_tocadas*100
-        
+                lista_musica()     
+                
         elif opcao == '4':
             if personagem.cansaco <= 40:
                 print('Tá cansado do quê??? Comece a tocar!!!')
@@ -80,9 +112,9 @@ if(__name__ == "__main__"):
                 personagem.cansaco -= 40
                 publico.publico *= 0.85
 
-
         elif opcao == '5':
             print('Você Abandonou o palco!')
+
             if personagem.dinheiro >= 1000:
                 personagem.dinheiro -= 1000
                 print('Você será multado em R$ 1000,00!!!')
@@ -91,10 +123,10 @@ if(__name__ == "__main__"):
                 print('Você será multado em R$', format(personagem.dinheiro,'.2f').replace('.',','), '!!!')
             personagem.fama *= 0.5
             publico.publico *= 0.25
-               
-            
+            print (f'A sua fama agora é: {personagem.fama}. Público atual: {publico.publico} e cansaço: {personagem.cansaco} ')
+            sleep(1)
+            print ("Abandonei o palco porque quero e posso!") 
+            sleep(1)
 
         elif opcao == "0":
-            break
-
-       # print(f'Sua habilidade é, {personagem.habilidade}, Seu cansaço é, {personagem.cansaco}, Sua fama é {personagem.fama}, e sua conta bancária é {personagem.dinheiro}.')
+            break  

@@ -72,8 +72,7 @@ if(__name__ == "__main__"):
                 print ('O seu público não esperava tanta ousadia...contenha-se!')
                 print (f'A sua fama agora é: {personagem.fama}. Público atual: {publico.publico} e cansaço: {personagem.cansaco} ')
             
-
-    
+ 
 
             
         
