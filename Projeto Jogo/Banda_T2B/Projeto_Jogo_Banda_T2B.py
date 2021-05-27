@@ -8,7 +8,7 @@ def Musica1():
 
     pygame.mixer.init()
     pygame.init()
-    pygame.mixer.music.load('corte_iron.mp3')
+    pygame.mixer.music.load('Projeto Jogo\corte_metallica.mp3')
     pygame.mixer_music.play()
     pygame.event.wait()
 
@@ -16,7 +16,7 @@ def Musica2():
 
     pygame.mixer.init()
     pygame.init()
-    pygame.mixer.music.load('corte_metallica.mp3')
+    pygame.mixer.music.load('Projeto Jogo\corte_iron.mp3')
     pygame.mixer_music.play()
     pygame.event.wait()
 
@@ -25,7 +25,7 @@ def Musica3():
 
     pygame.mixer.init()
     pygame.init()
-    pygame.mixer.music.load('corte_telo.mp3')
+    pygame.mixer.music.load('Projeto Jogo\corte_telo.mp3')
     pygame.mixer_music.play()
     pygame.event.wait()
 
@@ -60,7 +60,7 @@ def lista_musica():
             print('Você ainda não tem habilidade para tocar essa música! Escolha outra!!!\n')           
             lista_musica()
         else:
-            Musica2()
+            Musica1()
             personagem.fama += 30
             publico.publico += 200
             personagem.cansaco += 15
@@ -71,7 +71,7 @@ def lista_musica():
             print (f'A sua fama agora é: {personagem.fama}. Público atual: {publico.publico} e cansaço: {personagem.cansaco} ')
             
     if musica == '2':
-        Musica1()
+        Musica2()
         personagem.fama += 25
         publico.publico += 150
         personagem.cansaco += 10
