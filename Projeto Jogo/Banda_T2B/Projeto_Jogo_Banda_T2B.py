@@ -4,33 +4,6 @@ from time import sleep
 from random import randint
 import pygame
 
-def Musica1(): 
-
-    pygame.mixer.init()
-    pygame.init()
-    pygame.mixer.music.load('Projeto Jogo\corte_metallica.mp3')
-    pygame.mixer_music.play()
-    pygame.event.wait()
-
-def Musica2():
-
-    pygame.mixer.init()
-    pygame.init()
-    pygame.mixer.music.load('Projeto Jogo\corte_iron.mp3')
-    pygame.mixer_music.play()
-    pygame.event.wait()
-
-
-def Musica3():
-
-    pygame.mixer.init()
-    pygame.init()
-    pygame.mixer.music.load('Projeto Jogo\corte_telo.mp3')
-    pygame.mixer_music.play()
-    pygame.event.wait()
-
-
-
 class Personagem:
     def __init__(self):
         self.habilidade = 0
@@ -45,13 +18,43 @@ class Personagem:
 class Publico:
     def __init__(self):
         self.publico = 500
-  
+
+def Musica1(): 
+
+    pygame.mixer.init()
+    pygame.init()
+    pygame.mixer.music.load('Projeto Jogo\corte_metallica.mp3')
+    pygame.mixer_music.play()
+    pygame.event.wait()
+def Musica2():
+
+    pygame.mixer.init()
+    pygame.init()
+    pygame.mixer.music.load('Projeto Jogo\corte_iron.mp3')
+    pygame.mixer_music.play()
+    pygame.event.wait()
+def Musica3():
+
+    pygame.mixer.init()
+    pygame.init()
+    pygame.mixer.music.load('Projeto Jogo\corte_telo.mp3')
+    pygame.mixer_music.play()
+    pygame.event.wait()
+
+def chuva():
+    print('CHUVA!!!')
+    print()
+    print('O Show foi cancelado!!!')
+    subiu_no_palco == False
+    cumprimentou_publico == False
+    publico.publico *= 0.85 
+
 def lista_musica():
 
     print ('Qual música você deseja tocar?: \n')
     print ('Pressione (1) para: Metallica - Master of Puppets')
     print ('Pressione (2) para: Iron Maiden - Fear of the Dark')
-    print ('Pressione (3) para: A se eu te pego!\n')
+    print ('Pressione (3) para: Ah se eu te pego!\n')
     musica = input ('Opção: ')
     print() 
         
@@ -113,7 +116,6 @@ if(__name__ == "__main__"):
 
     while True:
       
-
         print(personagem)
         sleep(1)
         print("")
@@ -129,14 +131,9 @@ if(__name__ == "__main__"):
        
         if opcao == '1':
             if cont >= 2: 
-                x = randint(1,5)
+                x = randint(1,2)
                 if x == 1:
-                    print('CHUVA!!!')
-                    print()
-                    print('O Show foi cancelado!!!')
-                    subiu_no_palco == False
-                    cumprimentou_publico == False
-                    publico.publico *= 0.85
+                    chuva()
                 else:
                     if subiu_no_palco == False:
                         personagem.fama += 5
@@ -151,18 +148,12 @@ if(__name__ == "__main__"):
                         subiu_no_palco = True
                 else:
                     print('Você já está no palco!')
-
-        
+   
         if opcao == '2':
             if cont >= 2:
-                x = randint(1,5) 
+                x = randint(1,2) 
                 if x == 1:
-                    print('CHUVA!!!')
-                    print()
-                    print('O Show foi cancelado!!!')
-                    subiu_no_palco == False
-                    cumprimentou_publico == False
-                    publico.publico *= 0.85
+                    chuva()
                 else:
                     if subiu_no_palco == False:
                         print('Vai cumprimentar quem? O Roadie??!! Suba no palco já!!!\n')
@@ -186,14 +177,9 @@ if(__name__ == "__main__"):
                        
         if opcao == '3':
             if cont >= 2: 
-                x = randint(1,5)
+                x = randint(1,2)
                 if x == 1:
-                    print('CHUVA!!!')
-                    print()
-                    print('O Show foi cancelado!!!')
-                    subiu_no_palco == False
-                    cumprimentou_publico == False
-                    publico.publico *= 0.85
+                    chuva()
                 else:
                     if subiu_no_palco == False:
                         print('O público pede a sua presença no palco! Suba já!\n')
@@ -242,6 +228,4 @@ if(__name__ == "__main__"):
             sleep(1)
 
         if opcao == "0":
-            break 
-        
-        
+            break
