@@ -5,7 +5,10 @@ class conta():
     
     def sacar(self):
         saque = float(input('Digite o valor do saque: '))
-        self.saldo -= saque
+        if saque > self.saldo:
+            print('Saldo Insuficiente.')
+        else:
+            self.saldo -= saque
         print(vars(self))
     
     def depositar(self):
