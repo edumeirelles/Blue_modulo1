@@ -1,6 +1,7 @@
 # Proposta de projeto de ficção interativa para avaliação de OO
 # Sugestão: completar com classes filhas colocando pessoas saudáveis, trabalhos menos remunerados, casas melhor equipadas et cetera
 from time import sleep
+from random import randint
 
 class Personagem:
     def __init__(self):
@@ -11,7 +12,7 @@ class Personagem:
         self.cache = 1000
     
     def __str__(self):
-        return f'Sua habilidade é, {self.habilidade}, Seu cansaço é, {self.cansaco}, Sua fama é {self.fama}, e sua conta bancária é {self.dinheiro}.'
+        return f'Sua habilidade é {self.habilidade}, seu cansaço é {self.cansaco}, sua fama é {self.fama} e sua conta bancária é {self.dinheiro}.'
 
 class Publico:
     def __init__(self):
@@ -64,8 +65,10 @@ if(__name__ == "__main__"):
     
     personagem = Personagem()
     publico = Publico()   
-    
     subiu_no_palco = False
+    cumprimentou_publico = False
+    cont = 0
+    x = 0
     
     # while True:
     #         print("---")
@@ -78,7 +81,10 @@ if(__name__ == "__main__"):
     #             break
 
     while True:
-                
+
+        print(x)
+        print(cont)
+
         print(personagem)
         sleep(1)
         print("")
@@ -90,29 +96,111 @@ if(__name__ == "__main__"):
         print('5 - Abandonar Palco')
         print('0 - Sair')
         opcao = input("Escolha sua ação: ")
+        print()
         
+        
+            
+
+
         if opcao == '1':
-            personagem.fama += 5
-            publico.publico += 100
-        
-        elif opcao == '2':
-            personagem.fama += 10
-            publico.publico += 100
-                       
-        elif opcao == '3':
-            if personagem.cansaco >= 60:
-                print('Você está muito cansado!!! Melhor fazer uma pausa!!!')
+            if cont >= 2: 
+                x = randint(1,3)
+                if x == 1:
+                    print('CHUVA!!!')
+                    print()
+                    print('O Show foi cancelado!!!')
+                    subiu_no_palco == False
+                    cumprimentou_publico == False
+                    publico.publico *= 0.85
+                else:
+                    if subiu_no_palco == False:
+                        personagem.fama += 5
+                        publico.publico += 100
+                        subiu_no_palco = True
+                    else:
+                        print('Você já está no palco!')
             else:
-                lista_musica()     
-                
-        elif opcao == '4':
+                if subiu_no_palco == False:
+                        personagem.fama += 5
+                        publico.publico += 100
+                        subiu_no_palco = True
+                else:
+                    print('Você já está no palco!')
+
+        
+        if opcao == '2':
+            if cont >= 2:
+                x = randint(1,3) 
+                if x == 1:
+                    print('CHUVA!!!')
+                    print()
+                    print('O Show foi cancelado!!!')
+                    subiu_no_palco == False
+                    cumprimentou_publico == False
+                    publico.publico *= 0.85
+                else:
+                    if subiu_no_palco == False:
+                        print('Vai cumprimentar quem? O Roadie??!! Suba no palco já!!!\n')
+                    else:
+                        if cumprimentou_publico == True:
+                            print('Chega de cumprimentar!!! Comece a tocar!!!')
+                        else:
+                            personagem.fama += 10
+                            publico.publico += 100
+                            cumprimentou_publico = True
+            else:
+                if subiu_no_palco == False:
+                    print('Vai cumprimentar quem? O Roadie??!! Suba no palco já!!!\n')
+                else:
+                    if cumprimentou_publico == True:
+                        print('Chega de cumprimentar!!! Comece a tocar!!!')
+                    else:
+                        personagem.fama += 10
+                        publico.publico += 100
+                        cumprimentou_publico = True
+                       
+        if opcao == '3':
+            if cont >= 2: 
+                x = randint(1,3)
+                if x == 1:
+                    print('CHUVA!!!')
+                    print()
+                    print('O Show foi cancelado!!!')
+                    subiu_no_palco == False
+                    cumprimentou_publico == False
+                    publico.publico *= 0.85
+                else:
+                    if subiu_no_palco == False:
+                        print('O público pede a sua presença no palco! Suba já!\n')
+                    else:
+                        if cumprimentou_publico == False:
+                            print('Seja educado!!! Cumprimente sua plateia!!!\n')
+                        else:
+                            if personagem.cansaco >= 60:
+                                print('Você está muito cansado!!! Melhor fazer uma pausa!!!\n')
+                            else:
+                                lista_musica() 
+            else:
+                if subiu_no_palco == False:
+                    print('O público pede a sua presença no palco! Suba já!\n')
+                else:
+                    if cumprimentou_publico == False:
+                        print('Seja educado!!! Cumprimente sua plateia!!!\n')
+                    else:
+                        if personagem.cansaco >= 60:
+                            print('Você está muito cansado!!! Melhor fazer uma pausa!!!\n')
+                        else:
+                            lista_musica()         
+            cont += 1
+               
+        if opcao == '4':
             if personagem.cansaco <= 40:
                 print('Tá cansado do quê??? Comece a tocar!!!')
             else:
                 personagem.cansaco -= 40
                 publico.publico *= 0.85
 
-        elif opcao == '5':
+        if opcao == '5':
             print('Você Abandonou o palco!')
 
             if personagem.dinheiro >= 1000:
@@ -128,5 +216,7 @@ if(__name__ == "__main__"):
             print ("Abandonei o palco porque quero e posso!") 
             sleep(1)
 
-        elif opcao == "0":
-            break  
+        if opcao == "0":
+            break 
+        
+        
