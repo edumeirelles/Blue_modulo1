@@ -157,7 +157,7 @@ if(__name__ == "__main__"):
         opcao = input("Escolha sua ação: ")
         print()
         
-        if carreira <= 2:
+        if carreira <= 20:
 
             if opcao == '1':
                 if cont >= 2: 
