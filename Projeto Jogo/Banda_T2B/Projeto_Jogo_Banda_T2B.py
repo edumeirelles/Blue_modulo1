@@ -1,9 +1,6 @@
-<<<<<<< HEAD
 # Proposta de projeto de ficção interativa para avaliação de OO
 # Sugestão: completar com classes filhas colocando pessoas saudáveis, trabalhos menos remunerados, casas melhor equipadas et cetera
 
-=======
->>>>>>> 08dd604e25985d44e64cc77d2b46b19e8da7e705
 from time import sleep
 from random import randint
 import pygame
@@ -163,11 +160,7 @@ if(__name__ == "__main__"):
         opcao = input("Escolha sua ação: ")
         print()
         
-<<<<<<< HEAD
-        if carreira <= 2:
-=======
         if carreira <= 20:
->>>>>>> 08dd604e25985d44e64cc77d2b46b19e8da7e705
 
             if opcao == '1':
                 if cont >= 2: 
@@ -283,17 +276,6 @@ if(__name__ == "__main__"):
             carreira += 1
             print(carreira)
             if carreira == 5:                       #personagem.fama
-<<<<<<< HEAD
-                print('\nCOMEÇO DE CARREIRA!!!\n')  #personagem.dinheiro
-            if carreira == 10:                      #publico.publico
-                print('\nMEIO DA CARREIRA\n')
-            if carreira == 15:
-                print('\nDECLÍNIO DA CARREIRA\n')
-        else:
-            print('\nAPOSENTADORIA\n')
-            print('\nStatus da Carreira\n')
-            sleep(10)
-=======
                 print('\nCOMEÇO DE CARREIRA!!!\n')
                 if publico.publico < 500:
                     print ("Você começou a sua carreira com a perna esquerda, melhore!")
@@ -333,5 +315,4 @@ if(__name__ == "__main__"):
                     exit()
                     
 
->>>>>>> 08dd604e25985d44e64cc77d2b46b19e8da7e705
             
