@@ -11,10 +11,10 @@ class Personagem:
         self.cansaco = 0
         self.fama = 0
         self.dinheiro = 0
-        self.cache = 1000
+        #self.cache = 1000
     
     def __str__(self):
-        return f'\nSua habilidade é {self.habilidade}, seu cansaço é {self.cansaco}, sua fama é {self.fama} e sua conta bancária é {self.dinheiro}.\n'
+        return f'\nSua habilidade é {self.habilidade:.0f}, seu cansaço é {self.cansaco:.0f}, sua fama é {self.fama:.0f} e sua conta bancária é ' + format(self.dinheiro,'.2f').replace('.',',') + '.\n'
 
 class Publico:
 
@@ -22,7 +22,7 @@ class Publico:
         self.publico = 500
     
     def __str__(self):
-        return f'Seu Público é {self.publico}!!!\n'
+        return f'Seu Público é {self.publico:.0f}!!!\n'
 
 def Musica1(): 
 
@@ -59,7 +59,7 @@ def sound_entrada():
     pygame.mixer.music.load('Projeto Jogo\Banda_T2B\corte_entrada.mp3')
     pygame.mixer_music.play()
     
-def chuva():
+def chuva():                                # função que dispara a chuva se o número aleatório gerado para a variável 'x' for igual a 1
     print('CHUVA!!!')
     print()
     print('O Show foi cancelado!!!')
@@ -77,7 +77,11 @@ def lista_musica():
     print ('Pressione (2) para: Iron Maiden - Fear of the Dark')
     print ('Pressione (3) para: Ah se eu te pego!\n')
     musica = input('Opção: ')
-    print() 
+    print()
+
+    while musica not in '123':
+        print('Opção inválida!!!\n')
+        musica = input('Opção: ') 
         
     if musica == '1':
 
@@ -95,7 +99,7 @@ def lista_musica():
             personagem.dinheiro += 200
 
             print("Parace que a sua fama aumentou após esse som!!!")
-            print(f'A sua fama agora é: {personagem.fama}. Público atual: {publico.publico} e cansaço: {personagem.cansaco} ')
+            print(f'A sua fama agora é: {personagem.fama:.0f}. Público atual: {publico.publico:.0f} e cansaço: {personagem.cansaco:.0f} ')
             
     if musica == '2':
 
@@ -107,7 +111,7 @@ def lista_musica():
         personagem.dinheiro += 100
         
         print('Ao som do Maiden, o público foi a loucura!')
-        print(f'A sua fama agora é: {personagem.fama}. Público atual: {publico.publico} e cansaço: {personagem.cansaco} ')
+        print(f'A sua fama agora é: {personagem.fama:.0f}. Público atual: {publico.publico:.0f} e cansaço: {personagem.cansaco:.0f} ')
             
     if musica == '3':
 
@@ -118,9 +122,9 @@ def lista_musica():
         personagem.habilidade -= 10
         personagem.dinheiro += 50
 
-        print('O seu público não esperava tanta ousadia...contenha-se!')
-        print(f'Sua habilidade foi reduzida em 10 pontos. Michel Teló faz você desaprender a tocar! Agora sua habilidade é de {personagem.habilidade}. ')
-        print(f'A sua fama reduziu para: {personagem.fama}. Público ainda fiel: {publico.publico} e cansaço: {personagem.cansaco} ')
+        print('O seu público não esperava tanta ousadia...contenha-se!/n')
+        print(f'Sua habilidade foi reduzida em 10 pontos. Michel Teló faz você desaprender a tocar! Agora sua habilidade é de {personagem.habilidade:.0f}. ')
+        print(f'A sua fama reduziu para: {personagem.fama:.0f}. Público ainda fiel: {publico.publico:.0f} e cansaço: {personagem.cansaco:.0f} ')
 
 if(__name__ == "__main__"):
     
@@ -128,27 +132,28 @@ if(__name__ == "__main__"):
     publico = Publico()   
     subiu_no_palco = False
     cumprimentou_publico = False
-    cont = 0
-    x = 0
-    carreira = 0
+    cont = 0                        # contador para para disparar a posssibilade de chuva a partir da segunda rodada.
+    x = 0                           # variável que receberá um número aletório em cada estapa, podendo causar a chuva quando 'x' receber o número 1.
+    carreira = 0                    # contador para imprir relatórios da carreira do personagem do jogo
     
-    # while True:
-    #         print("---")
-    #         print('Bem vindo à banda Turma 2B!!!')
-    #         print('O seu show começa em')2
-    #         for cont in range (5, -1, -1):
-    #             print (cont)
-    #             sleep(1)
-    #         if cont ==0:
-    #             break
+    while True:                                        # contagem regressiva no início do jogo
+            print("---")
+            print('Bem vindo à banda Turma 2B!!!')
+            print('O seu show começa em')
+            for cont in range (5, -1, -1):
+                print (cont)
+                sleep(1)
+            if cont ==0:
+                break
 
     while True:
       
         print(personagem)
         print(publico)
         sleep(1)
-        print()
+        print('----------')
         print("Ações:")
+        print('----------')
         print()
         print('1 - Subir no palco')
         print('2 - Cumprimentar o público')
@@ -160,8 +165,13 @@ if(__name__ == "__main__"):
         opcao = input("Escolha sua ação: ")
         print()
         
+        while opcao not in '123450':
+            print('Opção inválida!!!\n')
+            opcao = input("Escolha sua ação: ")
+
         if carreira <= 20:
 
+            
             if opcao == '1':
                 if cont >= 2: 
                     x = randint(1,5)
@@ -203,7 +213,7 @@ if(__name__ == "__main__"):
                                 personagem.fama += 10
                                 publico.publico += 100
                                 cumprimentou_publico = True
-                                print('Que artista!!! o público delira com a sua simpatia! quase uma miss!!!\n')
+                                print('Que artista!!! o público delira com a sua simpatia! Quase uma miss!!!\n')
                                 sleep(1.5)
                 else:
                     if subiu_no_palco == False:
@@ -272,10 +282,13 @@ if(__name__ == "__main__"):
 
             if opcao == "0":
                 break
+        
+            
+                
 
             carreira += 1
-            print(carreira)
-            if carreira == 5:                       #personagem.fama
+            
+            if carreira == 5:                       
                 print('\nCOMEÇO DE CARREIRA!!!\n')
                 if publico.publico < 500:
                     print ("Você começou a sua carreira com a perna esquerda, melhore!")
@@ -283,8 +296,8 @@ if(__name__ == "__main__"):
                 else:
                     print ("O inicio da sua carreira é promissor, continue assim!!!")
                     print(f'Ganhos do inicio da Carreira: R$ {personagem.dinheiro}/ Fama: {personagem.fama}/ Público: {publico.publico}.')
-                                                              #personagem.dinheiro
-            if carreira == 10:                      #publico.publico
+                                                              
+            if carreira == 10:                      
                 print('\nMEIO DA CARREIRA\n')
                 if publico.publico < 1000:
                     print ("A sua carreira  está no meio e você já parece um fracassado! Melhore a sua pontuação, looser!")
