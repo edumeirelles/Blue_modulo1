@@ -39,6 +39,9 @@ class Pessoa:
     def setTelefone(self, telefone):
         self.__telefone = telefone
 
+    def saudacao(self):
+        print('olá!')
+
 
 pessoa = Pessoa('Eduardo', 36, '352.756.448-92', '16 99260 - 1155')
 pessoa2 = Pessoa('Zé', 55, '021.021.021-02','66 6666 - 6666')
@@ -54,14 +57,18 @@ class Advogado(Pessoa):
     def __init__(self, nome, idade, cpf, telefone, oab):
         self.__oab = oab
         super().__init__(nome, idade, cpf, telefone)
+    
+    def saudacao(self):
+        print('bem vindo ao meu escritótio de advocacia!!!')
 
 adevogado = Advogado('Zé', 64, '000.555.666-85', '45 5464 - 5824', '123456')
-adevogado.setCPF('555.666.777-88')
-print(vars(adevogado))
+# adevogado.setCPF('555.666.777-88')
+# print(vars(adevogado))
 
-class Medico(Pessoa):
+# class Medico(Pessoa):
 
-    def __init__(self, nome, idade, cpf, telefone, crm):
-        self.__crm = crm
-        super().__init__(nome, idade, cpf, telefone)
-        
+#     def __init__(self, nome, idade, cpf, telefone, crm):
+#         self.__crm = crm
+#         super().__init__(nome, idade, cpf, telefone)
+
+adevogado.saudacao()
