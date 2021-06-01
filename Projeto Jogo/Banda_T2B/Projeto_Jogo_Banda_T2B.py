@@ -23,16 +23,23 @@ class Rockeiro(Personagem):
     def __init__(self):
         super().__init__()
     
+    def __str__(self):
+        return f'Você escolheu ser Rockeiro!!! Sua habilidade e seu público se desenvolverão mais rápido,\nporém não terás tanta fama nem dinheiro, pois nasceu na época errada!!!\nHabilidade: {self.habilidade}\nCansaço: {self.cansaco}\nFama: {self.fama}\nDinheiro: R$ ' + format(self.dinheiro,'.2f').replace('.',',') + '\n'
+    
     def multiplicativo(self):
         
         self.habilidade *= 1.2
         self.cansaco *= 1.2
+        
         
 
 class Sertanejo(Personagem):
     def __init__(self):
         super().__init__()
 
+    def __str__(self):
+        return f'Você escolheu ser Sertanejo!!! Sua fama e seu dinheiro se desenvolverão mais rápido,\nporém não terás tanta habilidade nem público, afinal o que importa mesmo é a conta no banco!!!\nHabilidade: {self.habilidade}\nCansaço: {self.cansaco}\nFama: {self.fama}\nDinheiro: R$ ' + format(self.dinheiro,'.2f').replace('.',',') + '\n'
+    
     def multiplicativo(self):
         
         self.fama *= 1.2
@@ -46,6 +53,10 @@ class Publico:
     
     def __str__(self):
         return f'Seu Público é {self.publico:.0f}!!!\n'
+
+    def multiplicativo_publico(self):
+        self.publico *= 1.2
+
 
 def Musica1(): 
 
@@ -151,6 +162,7 @@ def lista_musica():
                 personagem.habilidade += 40
                 personagem.dinheiro += 200
                 personagem.multiplicativo()
+                publico.multiplicativo_publico()
                 
 
                 print("Parace que a sua fama aumentou após esse som!!!")
@@ -166,9 +178,10 @@ def lista_musica():
             personagem.habilidade += 30
             personagem.dinheiro += 100
             personagem.multiplicativo()
+            publico.multiplicativo_publico()
             
             print('Ao som do Maiden, o público foi a loucura!')
-            print(f'A sua fama agora é: {personagem.fama:.0f}.\nPúblico atual: {publico.publico:.0f}\nCansaço: {personagem.cansaco:.0f}\nHabilidade: {personagem.habilidade:.2f}')
+            print(f'A sua fama agora é: {personagem.fama:.0f}.\nPúblico atual: {publico.publico:.0f}\nCansaço: {personagem.cansaco:.0f}\nHabilidade: {personagem.habilidade:.0f}')
             print('Dinheiro:', format(personagem.dinheiro,'.2f').replace('.',',')) 
 
         if musica == '3':
@@ -230,7 +243,7 @@ def lista_musica():
             personagem.multiplicativo()
             
             print('O público até ouviu a voz do Marrone! Parabéns!!!')
-            print(f'A sua fama agora é: {personagem.fama:.0f}.\nPúblico atual: {publico.publico:.0f}\nCansaço: {personagem.cansaco:.0f}\nHabilidade: {personagem.habilidade:.2f}')
+            print(f'A sua fama agora é: {personagem.fama:.0f}.\nPúblico atual: {publico.publico:.0f}\nCansaço: {personagem.cansaco:.0f}\nHabilidade: {personagem.habilidade:.0f}')
             print('Dinheiro:', format(personagem.dinheiro,'.2f').replace('.',','))
 
         if musica == '3':
@@ -284,10 +297,13 @@ if(__name__ == "__main__"):
         estilo = input('Opção: ')
     
     if estilo == '1':
-
         personagem = Rockeiro()
+        print(Rockeiro())
+        sleep(2)
     else:
         personagem = Sertanejo()
+        print(Sertanejo())
+        sleep(2)
         
     while True:
       
@@ -442,47 +458,85 @@ if(__name__ == "__main__"):
 
             carreira += 1
             
-            if carreira == 8:                       
-                print('\nCOMEÇO DE CARREIRA!!!\n')
-                if publico.publico < 500:
-                    print("Você começou a sua carreira com a perna esquerda, melhore!")
-                    print('Ganhos do inicio da Carreira: R$', format(personagem.dinheiro,'.2f').replace('.',','),f'/ Fama: {personagem.fama:.0f}/ Público: {publico.publico:.0f}.')
-                else:
-                    print("O inicio da sua carreira é promissor, continue assim!!!")
-                    print('Ganhos do inicio da Carreira: R$', format(personagem.dinheiro,'.2f').replace('.',','),f'/ Fama: {personagem.fama:.0f}/ Público: {publico.publico:.0f}.')
+            if estilo == '1':
+                if carreira == 5:                       
+                    print('\nCOMEÇO DE CARREIRA!!!\n')
+                    
+                    if publico.publico < 500*1.2:
+                        print("Você começou a sua carreira com a perna esquerda, melhore!")
+                        print('Ganhos do inicio da Carreira: R$', format(personagem.dinheiro,'.2f').replace('.',','),f'/ Fama: {personagem.fama:.0f}/ Público: {publico.publico:.0f}.')
+                    else:
+                        print("O inicio da sua carreira é promissor, continue assim!!!")
+                        print('Ganhos do inicio da Carreira: R$', format(personagem.dinheiro,'.2f').replace('.',','),f'/ Fama: {personagem.fama:.0f}/ Público: {publico.publico:.0f}.')
                                                               
-            if carreira == 16:                      
-                print('\nMEIO DA CARREIRA\n')
-                if publico.publico < 1000:
-                    print("A sua carreira  está no meio e você já parece um fracassado! Melhore a sua pontuação, looser!")
-                    print('Ganhos até meados da Carreira: R$', format(personagem.dinheiro,'.2f').replace('.',','),f'/ Fama: {personagem.fama:.0f}/ Público: {publico.publico:.0f}.')
-                else:
-                    if estilo == '1':
+                if carreira == 10:                      
+                    print('\nMEIO DA CARREIRA\n')
+                    if publico.publico < 1000*1.2:
+                        print("A sua carreira  está no meio e você já parece um fracassado! Melhore a sua pontuação, looser!")
+                        print('Ganhos até meados da Carreira: R$', format(personagem.dinheiro,'.2f').replace('.',','),f'/ Fama: {personagem.fama:.0f}/ Público: {publico.publico:.0f}.')
+                    else:
                         print("Está indo muito bem, se continuar assim vai se aposentar como um Deus do Rock!!")
+                        #print("Está indo muito bem, se continuar assim vai se aposentar como um Rei do Rodeio!!")
+                        print('Ganhos até meados da Carreira: R$', format(personagem.dinheiro,'.2f').replace('.',','),f'/ Fama: {personagem.fama:.0f}/ Público: {publico.publico:.0f}.')
+                if carreira == 15:
+                    print('\nDECLÍNIO DA CARREIRA\n')
+                    if publico.publico <1500*1.2:
+                        print ("Lamentável! A sua carreira está chegando ao fim e você está só o caco!")
+                        print('Ganhos até o final da Carreira: R$', format(personagem.dinheiro,'.2f').replace('.',','),f'/ Fama: {personagem.fama:.0f}/ Público: {publico.publico:.0f}.')
+                    else:
+                        print ("Apesar da crise de meia idade e do leve declinio, você continua ganhando público!!!")
+                        print('Ganhos até o final da Carreira: R$', format(personagem.dinheiro,'.2f').replace('.',','),f'/ Fama: {personagem.fama:.0f}/ Público: {publico.publico:.0f}.')
+            
+                if carreira == 20:  
+
+                    print('\nAPOSENTADORIA\n')
+
+                    if publico.publico <2000*1.2:
+                        print('Sua Carreira foi por água a baixo! Uma vida disperdiçada!!')
+                    elif publico.publico >=2000*1.2 and publico.publico <=2300*1.2:    
+                        print('Você teve uma boa carreira! Não foi um Hendrix, mas deu para o gasto!!!')
+                    else:
+                        print('Você marcou a vida das pessoas! Que homem, que artista!!!!')
+                        sleep(5)
+                    print('Você se aposentou com R$', format(personagem.dinheiro,'.2f').replace('.',','), f'/ Fama: {personagem.fama:.0f}/ Público: {publico.publico:.0f}.')
+                    exit()
+            else:
+                if carreira == 5:                       
+                    print('\nCOMEÇO DE CARREIRA!!!\n')
+                    
+                    if publico.publico < 500:
+                        print("Você começou a sua carreira com a perna esquerda, melhore!")
+                        print('Ganhos do inicio da Carreira: R$', format(personagem.dinheiro,'.2f').replace('.',','),f'/ Fama: {personagem.fama:.0f}/ Público: {publico.publico:.0f}.')
+                    else:
+                        print("O inicio da sua carreira é promissor, continue assim!!!")
+                        print('Ganhos do inicio da Carreira: R$', format(personagem.dinheiro,'.2f').replace('.',','),f'/ Fama: {personagem.fama:.0f}/ Público: {publico.publico:.0f}.')
+                                                              
+                if carreira == 10:                      
+                    print('\nMEIO DA CARREIRA\n')
+                    if publico.publico < 1000:
+                        print("A sua carreira  está no meio e você já parece um fracassado! Melhore a sua pontuação peão!")
+                        print('Ganhos até meados da Carreira: R$', format(personagem.dinheiro,'.2f').replace('.',','),f'/ Fama: {personagem.fama:.0f}/ Público: {publico.publico:.0f}.')
                     else:
                         print("Está indo muito bem, se continuar assim vai se aposentar como um Rei do Rodeio!!")
-                    print('Ganhos até meados da Carreira: R$', format(personagem.dinheiro,'.2f').replace('.',','),f'/ Fama: {personagem.fama:.0f}/ Público: {publico.publico:.0f}.')
-            if carreira == 25:
-                print('\nDECLÍNIO DA CARREIRA\n')
-                if publico.publico <1500:
-                    print ("Lamentável! A sua carreira está chegando ao fim e você está só o caco!")
-                    print('Ganhos até o final da Carreira: R$', format(personagem.dinheiro,'.2f').replace('.',','),f'/ Fama: {personagem.fama:.0f}/ Público: {publico.publico:.0f}.')
-                else:
-                    print ("Apesar da crise de meia idade e do leve declinio, você continua ganhando público!!!")
-                    print('Ganhos até o final da Carreira: R$', format(personagem.dinheiro,'.2f').replace('.',','),f'/ Fama: {personagem.fama:.0f}/ Público: {publico.publico:.0f}.')
+                        print('Ganhos até meados da Carreira: R$', format(personagem.dinheiro,'.2f').replace('.',','),f'/ Fama: {personagem.fama:.0f}/ Público: {publico.publico:.0f}.')
+                if carreira == 15:
+                    print('\nDECLÍNIO DA CARREIRA\n')
+                    if publico.publico <1500:
+                        print ("Lamentável! A sua carreira está chegando ao fim e você está só o caco!")
+                        print('Ganhos até o final da Carreira: R$', format(personagem.dinheiro,'.2f').replace('.',','),f'/ Fama: {personagem.fama:.0f}/ Público: {publico.publico:.0f}.')
+                    else:
+                        print ("Apesar da crise de meia idade e do leve declínio, você continua ganhando público!!!")
+                        print('Ganhos até o final da Carreira: R$', format(personagem.dinheiro,'.2f').replace('.',','),f'/ Fama: {personagem.fama:.0f}/ Público: {publico.publico:.0f}.')
             
-            if carreira == 30:           
+                if carreira == 20:           
                     print('\nAPOSENTADORIA\n')
 
                     if publico.publico <2000:
-                            print('Sua Carreira foi por água a baixo! Uma vida disperdiçada!!')
-                    elif publico.publico >=2000 and publico.publico <=2300:
-                            if estilo == '1':
-                                print('Você teve uma boa carreira! Não foi um Hendrix, mas deu para o gasto!!!')
-                            else:
-                                print('Você teve uma boa carreira! Não foi um Tião Carreiro, mas deu para o gasto!!!')
+                        print('Sua Carreira foi por água a baixo! Uma vida disperdiçada!!')
+                    elif publico.publico >=2000 and publico.publico <=2300:   
+                        print('Você teve uma boa carreira! Não foi um Tião Carreiro, mas deu para o gasto!!!')
                     else:
                         print('Você marcou a vida das pessoas! Que homem, que artista!!!!')
-                        sleep(10)
-                    print('Você se aposentou com R$', format(personagem.dinheiro,'.2f').replace('.',','), f'/ Fama: {personagem.fama}/ Público: {publico.publico}.')
+                        sleep(5)
+                    print('Você se aposentou com R$', format(personagem.dinheiro,'.2f').replace('.',','), f'/ Fama: {personagem.fama:.0f}/ Público: {publico.publico:.0f}.')
                     exit()
