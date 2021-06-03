@@ -181,6 +181,7 @@ def lista_musica():
             publico.multiplicativo_publico()
             
             print('Ao som do Maiden, o público foi a loucura!')
+            sleep (2)
             print(f'A sua fama agora é: {personagem.fama:.0f}.\nPúblico atual: {publico.publico:.0f}\nCansaço: {personagem.cansaco:.0f}\nHabilidade: {personagem.habilidade:.0f}')
             print('Dinheiro:', format(personagem.dinheiro,'.2f').replace('.',',')) 
 
@@ -195,6 +196,7 @@ def lista_musica():
             
 
             print('O seu público não esperava tanta ousadia...contenha-se!/n')
+            sleep(2)
             print(f'Sua habilidade foi reduzida em 10 pontos. Restart faz você desaprender a tocar! Agora sua habilidade é de {personagem.habilidade:.0f}. ')
             print(f'A sua fama reduziu para: {personagem.fama:.0f}. Público ainda fiel: {publico.publico:.0f} e cansaço: {personagem.cansaco:.0f} ')   
 
@@ -215,7 +217,8 @@ def lista_musica():
 
             if personagem.habilidade < 50:
 
-                print('Você ainda não tem habilidade para tocar essa música! Escolha outra!!!\n')           
+                print('Você ainda não tem habilidade para tocar essa música! Escolha outra!!!\n')
+                sleep (2)           
                 lista_musica()
                 
             else:
@@ -229,6 +232,7 @@ def lista_musica():
                 personagem.multiplicativo()
                 
                 print("Parace que a sua fama aumentou após essa moda!!!")
+                sleep (2)
                 print(f'A sua fama agora é: {personagem.fama:.0f}.\nPúblico atual: {publico.publico:.0f}\nCansaço: {personagem.cansaco:.0f}\nHabilidade: {personagem.habilidade:.0f}')
                 print('Dinheiro:', format(personagem.dinheiro,'.2f').replace('.',','))
 
@@ -243,6 +247,7 @@ def lista_musica():
             personagem.multiplicativo()
             
             print('O público até ouviu a voz do Marrone! Parabéns!!!')
+            sleep (2)
             print(f'A sua fama agora é: {personagem.fama:.0f}.\nPúblico atual: {publico.publico:.0f}\nCansaço: {personagem.cansaco:.0f}\nHabilidade: {personagem.habilidade:.0f}')
             print('Dinheiro:', format(personagem.dinheiro,'.2f').replace('.',','))
 
@@ -344,6 +349,7 @@ if(__name__ == "__main__"):
                             sleep(1)
                         else:
                             print('Você já está no palco!\n')
+                            sleep (2)
                             print()
                 else:
                     if subiu_no_palco == False:
@@ -352,11 +358,17 @@ if(__name__ == "__main__"):
                             subiu_no_palco = True
                             sound_entrada()
                             if estilo == '1':
+                                
                                 print('Você subiu no palco e o mosh já começou a se formar, hoje tem roda punk!!!!\n')
+                                sleep (2)
                             else:
+                                
                                 print('Os berrantes anunciaram a sua entrada!!! Agora você está no palco!!!\n')
+                                sleep (2)
                     else:
+                        
                         print('Você já está no palco!\n')
+                        sleep (2)
 
             if opcao == '2':
                 if cont >= 2:
@@ -367,26 +379,33 @@ if(__name__ == "__main__"):
                         if subiu_no_palco == False:
                             if estilo == '1':
                                 print('Vai cumprimentar quem? O Roadie??!! Suba no palco já!!!\n')
+                                sleep (2)
                             else:
+                                sleep (2)
                                 print('Suba no palco cowboy! Sua plateia o aguarda!\n')
                         else:
                             if cumprimentou_publico == True:
                                 print('Chega de cumprimentar!!! Comece a tocar!!!\n')
+                                sleep (2)
                             else:
                                 personagem.fama += 10
                                 publico.publico += 100
                                 cumprimentou_publico = True
                                 print('Que artista!!! o público delira com a sua simpatia! Quase uma miss!!!\n')
+                                
                                 sleep(1)
                 else:
                     if subiu_no_palco == False:
                         if estilo == '1':
                             print('Vai cumprimentar quem? O Roadie??!! Suba no palco já!!!\n')
+                            sleep (2)
                         else:
                             print('Suba no palco cowboy! Sua plateia o aguarda!\n')
+                            sleep (2)
                     else:
                         if cumprimentou_publico == True:
                             print('Chega de cumprimentar!!! Comece a tocar!!!\n')
+                            sleep (2)
                         else:
                             personagem.fama += 10
                             publico.publico += 100
@@ -402,29 +421,37 @@ if(__name__ == "__main__"):
                     else:
                         if subiu_no_palco == False:
                             print('O público pede a sua presença no palco! Suba já!\n')
+                            sleep (2)
                         else:
                             if cumprimentou_publico == False:
                                 if estilo == '1':
                                     print('Seja educado!!! Cumprimente sua plateia!!!\n')
+                                    sleep (2)
                                 else:
                                     print('Peão que se preze primeiro cumprimenta o público\n')
+                                    sleep (2)
                             else:
                                 if personagem.cansaco >= 60:
                                     print('Você está muito cansado!!! Melhor fazer uma pausa!!!\n')
+                                    sleep (2)
                                 else:
                                     lista_musica() 
                 else:
                     if subiu_no_palco == False:
                         print('O público pede a sua presença no palco! Suba já!\n')
+                        sleep (2)
                     else:
                         if cumprimentou_publico == False:
                             if estilo == '1':
                                 print('Seja educado!!! Cumprimente sua plateia!!!\n')
+                                sleep (2)
                             else:
                                 print('Peão que se preze primeiro cumprimenta o público\n')
+                                sleep (2)
                         else:
                             if personagem.cansaco >= 60:
                                 print('Você está muito cansado!!! Melhor fazer uma pausa!!!\n')
+                                sleep (2)
                             else:
                                 lista_musica()         
                 cont += 1
@@ -432,17 +459,21 @@ if(__name__ == "__main__"):
             if opcao == '4':
                 if personagem.cansaco <= 40:
                     print('Tá cansado do quê??? Comece a tocar!!!')
+                    sleep (2)
                 else:
                     print('Nada melhor que um Toddynho e uma noite bem dormida!!!\nAgora você está renovado!!!')
+                    sleep (2)
                     personagem.cansaco -= 40
                     publico.publico *= 0.85
 
             if opcao == '5':
                 print('Você Abandonou o palco!')
+                sleep (2)
 
                 if personagem.dinheiro >= 1000:
                     personagem.dinheiro -= 1000
                     print('Você será multado em R$ 1000,00!!!')
+                    sleep (2)
                 else:
                     print('Você será multado em R$', format(personagem.dinheiro,'.2f').replace('.',','), '!!!')
                     personagem.dinheiro = 0
@@ -464,6 +495,7 @@ if(__name__ == "__main__"):
                     
                     if publico.publico < 500*1.2:
                         print("Você começou a sua carreira com a perna esquerda, melhore!")
+                        sleep (2)
                         print('Ganhos do inicio da Carreira: R$', format(personagem.dinheiro,'.2f').replace('.',','),f'/ Fama: {personagem.fama:.0f}/ Público: {publico.publico:.0f}.')
                     else:
                         print("O inicio da sua carreira é promissor, continue assim!!!")
@@ -473,18 +505,21 @@ if(__name__ == "__main__"):
                     print('\nMEIO DA CARREIRA\n')
                     if publico.publico < 1000*1.2:
                         print("A sua carreira  está no meio e você já parece um fracassado! Melhore a sua pontuação, looser!")
+                        sleep (2)
                         print('Ganhos até meados da Carreira: R$', format(personagem.dinheiro,'.2f').replace('.',','),f'/ Fama: {personagem.fama:.0f}/ Público: {publico.publico:.0f}.')
                     else:
                         print("Está indo muito bem, se continuar assim vai se aposentar como um Deus do Rock!!")
-                        
+                        sleep (2)
                         print('Ganhos até meados da Carreira: R$', format(personagem.dinheiro,'.2f').replace('.',','),f'/ Fama: {personagem.fama:.0f}/ Público: {publico.publico:.0f}.')
                 if carreira == 15:
                     print('\nDECLÍNIO DA CARREIRA\n')
                     if publico.publico <1500*1.2:
                         print ("Lamentável! A sua carreira está chegando ao fim e você está só o caco!")
+                        sleep (2)
                         print('Ganhos até o final da Carreira: R$', format(personagem.dinheiro,'.2f').replace('.',','),f'/ Fama: {personagem.fama:.0f}/ Público: {publico.publico:.0f}.')
                     else:
                         print ("Apesar da crise de meia idade e do leve declinio, você continua ganhando público!!!")
+                        sleep (2)
                         print('Ganhos até o final da Carreira: R$', format(personagem.dinheiro,'.2f').replace('.',','),f'/ Fama: {personagem.fama:.0f}/ Público: {publico.publico:.0f}.')
             
                 if carreira == 20:  
@@ -493,8 +528,10 @@ if(__name__ == "__main__"):
 
                     if publico.publico <2000*1.2:
                         print('Sua Carreira foi por água a baixo! Uma vida disperdiçada!!')
+                        sleep (2)
                     elif publico.publico >=2000*1.2 and publico.publico <=2300*1.2:    
                         print('Você teve uma boa carreira! Não foi um Hendrix, mas deu para o gasto!!!')
+                        sleep (2)
                     else:
                         print('Você marcou a vida das pessoas! Que homem, que artista!!!!')
                         sleep(5)
@@ -506,26 +543,32 @@ if(__name__ == "__main__"):
                     
                     if publico.publico < 500:
                         print("Você começou a sua carreira com a perna esquerda, melhore!")
+                        sleep (2)
                         print('Ganhos do inicio da Carreira: R$', format(personagem.dinheiro,'.2f').replace('.',','),f'/ Fama: {personagem.fama:.0f}/ Público: {publico.publico:.0f}.')
                     else:
                         print("O inicio da sua carreira é promissor, continue assim!!!")
+                        sleep (2)
                         print('Ganhos do inicio da Carreira: R$', format(personagem.dinheiro,'.2f').replace('.',','),f'/ Fama: {personagem.fama:.0f}/ Público: {publico.publico:.0f}.')
                                                               
                 if carreira == 10:                      
                     print('\nMEIO DA CARREIRA\n')
                     if publico.publico < 1000:
                         print("A sua carreira  está no meio e você já parece um fracassado! Melhore a sua pontuação peão!")
+                        sleep (2)
                         print('Ganhos até meados da Carreira: R$', format(personagem.dinheiro,'.2f').replace('.',','),f'/ Fama: {personagem.fama:.0f}/ Público: {publico.publico:.0f}.')
                     else:
                         print("Está indo muito bem, se continuar assim vai se aposentar como um Rei do Rodeio!!")
+                        sleep (2)
                         print('Ganhos até meados da Carreira: R$', format(personagem.dinheiro,'.2f').replace('.',','),f'/ Fama: {personagem.fama:.0f}/ Público: {publico.publico:.0f}.')
                 if carreira == 15:
                     print('\nDECLÍNIO DA CARREIRA\n')
                     if publico.publico <1500:
                         print ("Lamentável! A sua carreira está chegando ao fim e você está só o caco!")
+                        sleep (2)
                         print('Ganhos até o final da Carreira: R$', format(personagem.dinheiro,'.2f').replace('.',','),f'/ Fama: {personagem.fama:.0f}/ Público: {publico.publico:.0f}.')
                     else:
                         print ("Apesar da crise de meia idade e do leve declínio, você continua ganhando público!!!")
+                        sleep (2)
                         print('Ganhos até o final da Carreira: R$', format(personagem.dinheiro,'.2f').replace('.',','),f'/ Fama: {personagem.fama:.0f}/ Público: {publico.publico:.0f}.')
             
                 if carreira == 20:           
@@ -533,10 +576,19 @@ if(__name__ == "__main__"):
 
                     if publico.publico <2000:
                         print('Sua Carreira foi por água a baixo! Uma vida disperdiçada!!')
+                        print('==' * 30)
+                        print('By: Rafael Freitas, Eduardo Meirelles Nogueira, Jorge Teixeira de Melo')
+                        sleep(2)
                     elif publico.publico >=2000 and publico.publico <=2300:   
                         print('Você teve uma boa carreira! Não foi um Tião Carreiro, mas deu para o gasto!!!')
+                        print('==' * 30)
+                        print('By: Rafael Freitas, Eduardo Meirelles Nogueira, Jorge Teixeira de Melo')
+                        sleep(2)
                     else:
                         print('Você marcou a vida das pessoas! Que homem, que artista!!!!')
+                        print('==' * 30)
+                        print('By: Rafael Freitas, Eduardo Meirelles Nogueira, Jorge Teixeira de Melo')
                         sleep(5)
-                    print('Você se aposentou com R$', format(personagem.dinheiro,'.2f').replace('.',','), f'/ Fama: {personagem.fama:.0f}/ Público: {publico.publico:.0f}.')
-                    exit()
+                print('Você se aposentou com R$', format(personagem.dinheiro,'.2f').replace('.',','), f'/ Fama: {personagem.fama:.0f}/ Público: {publico.publico:.0f}.')
+                
+                exit()
