@@ -62,63 +62,63 @@ def Musica1():
 
     pygame.mixer.init()
     pygame.init()
-    pygame.mixer.music.load('Projeto Jogo\Banda_T2B\corte_metallica.mp3')
+    pygame.mixer.music.load('D:\OneDrive\Blue\Repositórios\Blue_modulo1\Projeto Jogo\Banda_T2B\corte_metallica.mp3')
     pygame.mixer_music.play()
     
 def Musica2():
 
     pygame.mixer.init()
     pygame.init()
-    pygame.mixer.music.load('Projeto Jogo\Banda_T2B\corte_iron.mp3')
+    pygame.mixer.music.load('D:\OneDrive\Blue\Repositórios\Blue_modulo1\Projeto Jogo\Banda_T2B\corte_iron.mp3')
     pygame.mixer_music.play()
     
 def Musica3():
 
     pygame.mixer.init()
     pygame.init()
-    pygame.mixer.music.load('Projeto Jogo\Banda_T2B\corte_restart.mp3')
+    pygame.mixer.music.load('D:\OneDrive\Blue\Repositórios\Blue_modulo1\Projeto Jogo\Banda_T2B\corte_restart.mp3')
     pygame.mixer_music.play()
 
 def Musica4(): 
 
     pygame.mixer.init()
     pygame.init()
-    pygame.mixer.music.load('Projeto Jogo\Banda_T2B\corte_evidencias.mp3')
+    pygame.mixer.music.load('D:\OneDrive\Blue\Repositórios\Blue_modulo1\Projeto Jogo\Banda_T2B\corte_evidencias.mp3')
     pygame.mixer_music.play()
 
 def Musica5():
 
     pygame.mixer.init()
     pygame.init()
-    pygame.mixer.music.load('Projeto Jogo\Banda_T2B\corte_marrone.mp3')
+    pygame.mixer.music.load('D:\OneDrive\Blue\Repositórios\Blue_modulo1\Projeto Jogo\Banda_T2B\corte_marrone.mp3')
     pygame.mixer_music.play()
 
 def Musica6():
 
     pygame.mixer.init()
     pygame.init()
-    pygame.mixer.music.load('Projeto Jogo\Banda_T2B\corte_telo.mp3')
+    pygame.mixer.music.load('D:\OneDrive\Blue\Repositórios\Blue_modulo1\Projeto Jogo\Banda_T2B\corte_telo.mp3')
     pygame.mixer_music.play() 
 
 def sound_rain():
 
     pygame.mixer.init()
     pygame.init()
-    pygame.mixer.music.load('Projeto Jogo\Banda_T2B\corte_rain.mp3')
+    pygame.mixer.music.load('D:\OneDrive\Blue\Repositórios\Blue_modulo1\Projeto Jogo\Banda_T2B\corte_rain.mp3')
     pygame.mixer_music.play()
     
 def sound_entrada():
 
     pygame.mixer.init()
     pygame.init()
-    pygame.mixer.music.load('Projeto Jogo\Banda_T2B\corte_entrada.mp3')
+    pygame.mixer.music.load('D:\OneDrive\Blue\Repositórios\Blue_modulo1\Projeto Jogo\Banda_T2B\corte_entrada.mp3')
     pygame.mixer_music.play()
 
 def sound_intro():
 
     pygame.mixer.init()
     pygame.init()
-    pygame.mixer.music.load('Projeto Jogo\Banda_T2B\projetoMusica.mp3')
+    pygame.mixer.music.load('D:\OneDrive\Blue\Repositórios\Blue_modulo1\Projeto Jogo\Banda_T2B\projetomusica.mp3')
     pygame.mixer_music.play()
     
 def chuva():                                # função que dispara a chuva se o número aleatório gerado para a variável 'x' for igual a 1
